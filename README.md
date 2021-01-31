@@ -1,6 +1,7 @@
 # MeowSynthesizer
 
-YouTube Demo: https://www.youtube.com/watch?v=y7hKNtucQbg
+YouTube Demo 1: https://www.youtube.com/watch?v=y7hKNtucQbg
+YouTube Demo 2: https://www.youtube.com/watch?v=Eu4TOEb1xII
 
 Article: https://dev.to/codr/meow-synthesizer-3b0i
 
