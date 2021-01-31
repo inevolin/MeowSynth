@@ -12,18 +12,28 @@
     console.log('cat start')
     const sampler = new Tone.Sampler({
       urls: {
-        E4: "A4.mp3",
-        E5: "A5.mp3",
+        // A2: 'A3.mp3',
+        A3: "A4.mp3",
+        A5: "A4.mp3",
       },
       onload: () => {
         try {
+          // extract notes from midi tracks
           let notes = []
           for (const track of midi.tracks) {
             console.log(track.instrument)
+            // filter only matching instruments
             if ([0].includes(track.instrument.number))
               notes = notes.concat(track.notes)
           }
+
+          // show all used (unique) notes
+          let uNotes = {}
+          for (const note of notes)
+            uNotes[note.name] = 1
+          console.log((Object.keys(uNotes)).sort())
           
+          // play notes
           console.log(notes)
           for (const note of notes)
             sampler.triggerAttackRelease([note.name], note.duration, note.time);
